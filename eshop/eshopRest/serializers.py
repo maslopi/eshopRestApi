@@ -76,6 +76,8 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'categoryid', 'name', 'enabled', 'description', 'price', 'attachments','category')
 
 class ArticleSerializer(serializers.ModelSerializer):
+    user = UserSerializer(source='userid')
+
     class Meta:
         model = Article
-        fields = ('id', 'userid', 'date', 'title', 'body')
+        fields = ('id', 'userid', 'date', 'title', 'body', 'user')
