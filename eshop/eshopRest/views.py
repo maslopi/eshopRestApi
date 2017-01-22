@@ -69,3 +69,10 @@ class ProductFeedbackViewSet(viewsets.ModelViewSet):
 class ProductRateViewSet(viewsets.ModelViewSet):
     queryset = ProductRate.objects.all()
     serializer_class = ProductRateSerializer
+
+class UserOrderViewSet(generics.ListAPIView):
+    serializer_class = OrderSerializer
+
+    def get_queryset(self):
+        userId = self.kwargs['userID']
+        return Order.objects.filter(userID = userId)
