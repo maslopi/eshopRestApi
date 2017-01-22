@@ -18,6 +18,10 @@ from rest_framework.decorators import detail_route
 from rest_framework import renderers
 from eshopRest.models import Order
 from eshopRest.serializers import OrderSerializer
+from eshopRest.models import CompanyFeedback
+from eshopRest.serializers import CompanyFeedbackSerializer
+from eshopRest.models import ProductFeedback
+from eshopRest.serializers import ProductFeedbackSerializer
 
 
 class RulesViewSet(viewsets.ModelViewSet):
@@ -51,3 +55,11 @@ class ArticleViewSet(viewsets.ModelViewSet):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+
+class CompanyFeedbackViewSet(viewsets.ModelViewSet):
+    queryset = CompanyFeedback.objects.all()
+    serializer_class = CompanyFeedbackSerializer
+
+class ProductFeedbackViewSet(viewsets.ModelViewSet):
+    queryset = ProductFeedback.objects.all()
+    serializer_class = ProductFeedbackSerializer

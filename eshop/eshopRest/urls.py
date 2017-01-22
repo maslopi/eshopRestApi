@@ -1,8 +1,13 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 from eshopRest import views
-from eshopRest.views import RulesViewSet, RoleViewSet, CompanyDataViewSet, AttachmentViewSet, api_root
+from eshopRest.views import RulesViewSet, RoleViewSet, CompanyDataViewSet, api_root
+from eshopRest.views import AttachmentViewSet
 from eshopRest.views import ProductViewSet
+from eshopRest.views import ProductCategoryViewSet
+from eshopRest.views import ArticleViewSet
+from eshopRest.views import CompanyFeedbackViewSet
+from eshopRest.views import ProductFeedbackViewSet
 from rest_framework import renderers
 
 rules_list = RulesViewSet.as_view({
@@ -60,22 +65,44 @@ product_detail = ProductViewSet.as_view({
     'delete': 'destroy'
 })
 
-productcategory_list = ProductViewSet.as_view({
+productcategory_list = ProductCategoryViewSet.as_view({
     'get': 'list',
     'post': 'create'
 })
-productcategory_detail = ProductViewSet.as_view({
+productcategory_detail = ProductCategoryViewSet.as_view({
     'get': 'retrieve',
     'put': 'update',
     'patch': 'partial_update',
     'delete': 'destroy'
 })
 
-article_list = ProductViewSet.as_view({
+article_list = ArticleViewSet.as_view({
     'get': 'list',
     'post': 'create'
 })
-article_detail = ProductViewSet.as_view({
+article_detail = ArticleViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+companyfeedback_list = CompanyFeedbackViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+companyfeedback_detail = CompanyFeedbackViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+productfeedback_list = ProductFeedbackViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+productfeedback_detail = ProductFeedbackViewSet.as_view({
     'get': 'retrieve',
     'put': 'update',
     'patch': 'partial_update',
@@ -97,5 +124,9 @@ urlpatterns = format_suffix_patterns([
     url(r'productcategory/$', productcategory_list, name='productcategory-list'),
     url(r'productcategory/(?P<pk>[0-9]+)/$', productcategory_detail, name='productcategory-detail'),
     url(r'article/$', article_list, name='article-list'),
-    url(r'article/(?P<pk>[0-9]+)/$', article_detail, name='article-detail')
+    url(r'article/(?P<pk>[0-9]+)/$', article_detail, name='article-detail'),
+    url(r'companyfeedback/$', companyfeedback_list, name='companyfeedback-list'),
+    url(r'companyfeedback/(?P<pk>[0-9]+)/$', companyfeedback_detail, name='companyfeedback-detail'),
+    url(r'productfeedback/$', productfeedback_list, name='productfeedback-list'),
+    url(r'productfeedback/(?P<pk>[0-9]+)/$', productfeedback_detail, name='productfeedback-detail')
 ])

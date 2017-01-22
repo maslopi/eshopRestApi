@@ -44,7 +44,7 @@ class CompanyData(models.Model):
 
 
 class CompanyFeedback(models.Model):
-    feedbackid = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
     rate = models.IntegerField()
     description = models.TextField()
@@ -117,7 +117,7 @@ class ProductCategory(models.Model):
 
 
 class ProductFeedback(models.Model):
-    feedbackid = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
     productid = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
     parentid = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.

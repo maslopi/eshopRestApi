@@ -10,6 +10,8 @@ from eshopRest.models import Order
 from eshopRest.models import User
 from eshopRest.models import UserRole
 from eshopRest.models import OrderState
+from eshopRest.models import CompanyFeedback
+from eshopRest.models import ProductFeedback
 
 class RulesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -76,8 +78,23 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'categoryid', 'name', 'enabled', 'description', 'price', 'attachments','category')
 
 class ArticleSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid')
+    user = UserSerializer(source='userid', read_only=True)
 
     class Meta:
         model = Article
         fields = ('id', 'userid', 'date', 'title', 'body', 'user')
+
+class CompanyFeedbackSerializer(serializers.ModelSerializer):
+    user = UserSerializer(source='userid', read_only=True)
+
+    class Meta:
+        model = CompanyFeedback
+        fields = ('id', 'userid', 'rate', 'description', 'user')
+
+class ProductFeedbackSerializer(serializers.ModelSerializer):
+    user = UserSerializer(source='userid', read_only=True)
+    product = ProductSerializer(source='productid', read_only=True)
+
+    class Meta:
+        model = ProductFeedback
+        fields = ('id', 'productid', 'parentid', 'userid', 'description', 'user', 'product')
