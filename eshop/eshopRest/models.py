@@ -60,21 +60,25 @@ class Order(models.Model):
     stateid = models.ForeignKey('OrderState', models.DO_NOTHING, db_column='stateID')  # Field name made lowercase.
     date = models.DateTimeField()
 
+    def get_products(self):
+        products = OrderProduct.objects.filter(id=self.id)
+        return products
+
     class Meta:
         managed = False
         db_table = 'order_'
 
 
 class OrderProduct(models.Model):
-    orderid = models.ForeignKey(Order, models.DO_NOTHING, db_column='orderID')  # Field name made lowercase.
-    productid = models.ForeignKey('Product', models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
+    id = models.ForeignKey(Order, models.DO_NOTHING, db_column='orderID', primary_key=True)  # Field name made lowercase.
+    productID = models.ForeignKey('Product', models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
     amount = models.IntegerField()
     price = models.FloatField()
 
     class Meta:
         managed = False
         db_table = 'order_product'
-        unique_together = (('orderid', 'productid'),)
+        unique_together = (('id', 'productID'),)
 
 
 class OrderState(models.Model):

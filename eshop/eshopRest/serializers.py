@@ -10,6 +10,7 @@ from eshopRest.models import Order
 from eshopRest.models import User
 from eshopRest.models import UserRole
 from eshopRest.models import OrderState
+from eshopRest.models import OrderProduct
 
 class RulesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,14 +42,7 @@ class UserSerializer(serializers.ModelSerializer):
 class OrderStateSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderState
-        fields = ('id', 'name', 'description')
-
-class OrderSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid')
-    orderState = OrderStateSerializer(source='stateid')
-    class Meta:
-        model = Order
-        fields = ('id', 'userid', 'stateid', 'date', 'user', 'orderState')
+        fields = ('id', 'name')
 
 class AttachmentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -81,3 +75,17 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('id', 'userid', 'date', 'title', 'body', 'user')
+
+class OrderProductSerializer(serializers.ModelSerializer):
+    product = ProductSerializer(source='productID')
+    class Meta:
+        model = OrderProduct
+        fields = ('id', 'productID', 'amount', 'price', 'product')
+
+class OrderSerializer(serializers.ModelSerializer):
+    user = UserSerializer(source='userid')
+    orderState = OrderStateSerializer(source='stateid')
+    products = OrderProductSerializer(many=True, read_only=True, source='get_products')
+    class Meta:
+        model = Order
+        fields = ('id', 'userid', 'stateid', 'date', 'user', 'orderState', 'products')
