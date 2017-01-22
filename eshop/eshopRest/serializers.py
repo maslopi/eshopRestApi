@@ -50,7 +50,7 @@ class OrderStateSerializer(serializers.ModelSerializer):
 class AttachmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attachment
-        fields = ('id', 'productid', 'name', 'path', 'extension')
+        fields = ('id', 'productID', 'name', 'path', 'extension')
 
 class RecursiveSerializer(serializers.Serializer):
     def to_representation(self, instance):
@@ -58,49 +58,49 @@ class RecursiveSerializer(serializers.Serializer):
         return serializer.data
 
 class ProductCategorySerializer(serializers.ModelSerializer):
-    parent = RecursiveSerializer(source='parentid', many=False, read_only=True)
+    parent = RecursiveSerializer(source='parentID', many=False, read_only=True)
 
     class Meta:
         model = ProductCategory
-        fields = ('id', 'parentid', 'name', 'description', 'enabled', 'parent')
+        fields = ('id', 'parentID', 'name', 'description', 'enabled', 'parent')
 
 class ProductSerializer(serializers.ModelSerializer):
     attachments = AttachmentSerializer(many=True, read_only=True, source='get_attachments')
-    category = ProductCategorySerializer(source='categoryid')
+    category = ProductCategorySerializer(source='categoryID')
 
     class Meta:
         model = Product
-        fields = ('id', 'categoryid', 'name', 'enabled', 'description', 'price', 'attachments','category')
+        fields = ('id', 'categoryID', 'name', 'enabled', 'description', 'price', 'attachments','category')
 
 class ArticleSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid', read_only=True)
+    user = UserSerializer(source='userID', read_only=True)
 
     class Meta:
         model = Article
-        fields = ('id', 'userid', 'date', 'title', 'body', 'user')
+        fields = ('id', 'userID', 'date', 'title', 'body', 'user')
 
 class CompanyFeedbackSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid', read_only=True)
+    user = UserSerializer(source='userID', read_only=True)
 
     class Meta:
         model = CompanyFeedback
-        fields = ('id', 'userid', 'rate', 'description', 'user')
+        fields = ('id', 'userID', 'rate', 'description', 'user')
 
 class ProductFeedbackSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid', read_only=True)
-    product = ProductSerializer(source='productid', read_only=True)
+    user = UserSerializer(source='userID', read_only=True)
+    product = ProductSerializer(source='productID', read_only=True)
 
     class Meta:
         model = ProductFeedback
-        fields = ('id', 'productid', 'parentid', 'userid', 'description', 'user', 'product')
+        fields = ('id', 'productID', 'parentID', 'userID', 'description', 'user', 'product')
 
 class ProductRateSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid', read_only=True)
-    product = ProductSerializer(source='productid', read_only=True)
+    user = UserSerializer(source='userID', read_only=True)
+    product = ProductSerializer(source='productID', read_only=True)
 
     class Meta:
         model = ProductRate
-        fields = ('id', 'productid', 'userid', 'rate', 'user', 'product')
+        fields = ('id', 'productID', 'userID', 'rate', 'user', 'product')
 
 class OrderProductSerializer(serializers.ModelSerializer):
     product = ProductSerializer(source='productID')
@@ -109,9 +109,9 @@ class OrderProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'productID', 'amount', 'price', 'product')
 
 class OrderSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userid')
-    orderState = OrderStateSerializer(source='stateid')
+    user = UserSerializer(source='userID')
+    orderState = OrderStateSerializer(source='stateID')
     products = OrderProductSerializer(many=True, read_only=True, source='get_products')
     class Meta:
         model = Order
-        fields = ('id', 'userid', 'stateid', 'date', 'user', 'orderState', 'products')
+        fields = ('id', 'userID', 'stateID', 'date', 'user', 'orderState', 'products')

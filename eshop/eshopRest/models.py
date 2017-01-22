@@ -12,7 +12,7 @@ from django.db import models
 
 class Article(models.Model):
     id = models.AutoField(db_column='articeID', primary_key=True)  # Field name made lowercase.
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
+    userID = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
     date = models.DateField(blank=True, null=True)
     title = models.CharField(max_length=128)
     body = models.TextField()
@@ -24,7 +24,7 @@ class Article(models.Model):
 
 class Attachment(models.Model):
     id = models.AutoField(db_column='attachmentID', primary_key=True)  # Field name made lowercase.
-    productid = models.ForeignKey('Product', models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
+    productID = models.ForeignKey('Product', models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
     name = models.CharField(max_length=255)
     path = models.CharField(max_length=255)
     extension = models.CharField(max_length=10)
@@ -45,7 +45,7 @@ class CompanyData(models.Model):
 
 class CompanyFeedback(models.Model):
     id = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
+    userID = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
     rate = models.IntegerField()
     description = models.TextField()
 
@@ -56,8 +56,8 @@ class CompanyFeedback(models.Model):
 
 class Order(models.Model):
     id = models.AutoField(db_column='orderID', primary_key=True)  # Field name made lowercase.
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
-    stateid = models.ForeignKey('OrderState', models.DO_NOTHING, db_column='stateID')  # Field name made lowercase.
+    userID = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
+    stateID = models.ForeignKey('OrderState', models.DO_NOTHING, db_column='stateID')  # Field name made lowercase.
     date = models.DateTimeField()
 
     def get_products(self):
@@ -93,14 +93,14 @@ class OrderState(models.Model):
 
 class Product(models.Model):
     id = models.AutoField(db_column='productID', primary_key=True)  # Field name made lowercase.
-    categoryid = models.ForeignKey('ProductCategory', models.DO_NOTHING, db_column='categoryID')  # Field name made lowercase.
+    categoryID = models.ForeignKey('ProductCategory', models.DO_NOTHING, db_column='categoryID')  # Field name made lowercase.
     name = models.CharField(max_length=128)
     enabled = models.BooleanField()
     description = models.TextField()
     price = models.FloatField()
 
     def get_attachments(self):
-        attachments = Attachment.objects.filter(productid=self.id)
+        attachments = Attachment.objects.filter(productID=self.id)
         return attachments
 
     class Meta:
@@ -110,7 +110,7 @@ class Product(models.Model):
 
 class ProductCategory(models.Model):
     id = models.AutoField(db_column='categoryID', primary_key=True)  # Field name made lowercase.
-    parentid = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
+    parentID = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=255)
     enabled = models.BooleanField()
@@ -122,9 +122,9 @@ class ProductCategory(models.Model):
 
 class ProductFeedback(models.Model):
     id = models.AutoField(db_column='feedbackID', primary_key=True)  # Field name made lowercase.
-    productid = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
-    parentid = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
+    productID = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
+    parentID = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
+    userID = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
     description = models.TextField()
 
     class Meta:
@@ -134,8 +134,8 @@ class ProductFeedback(models.Model):
 
 class ProductRate(models.Model):
     id = models.AutoField(db_column='rateID', primary_key=True)  # Field name made lowercase.
-    productid = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
-    userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
+    productID = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
+    userID = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
     rate = models.IntegerField()
 
     class Meta:
