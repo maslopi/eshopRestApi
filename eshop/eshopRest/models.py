@@ -11,7 +11,7 @@ from django.db import models
 
 
 class Article(models.Model):
-    articeid = models.AutoField(db_column='articeID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='articeID', primary_key=True)  # Field name made lowercase.
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID', blank=True, null=True)  # Field name made lowercase.
     date = models.DateField(blank=True, null=True)
     title = models.CharField(max_length=128)
@@ -23,7 +23,7 @@ class Article(models.Model):
 
 
 class Attachment(models.Model):
-    attachmentid = models.AutoField(db_column='attachmentID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='attachmentID', primary_key=True)  # Field name made lowercase.
     productid = models.ForeignKey('Product', models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
     name = models.CharField(max_length=255)
     path = models.CharField(max_length=255)
@@ -88,10 +88,10 @@ class OrderState(models.Model):
 
 
 class Product(models.Model):
-    productid = models.AutoField(db_column='productID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='productID', primary_key=True)  # Field name made lowercase.
     categoryid = models.ForeignKey('ProductCategory', models.DO_NOTHING, db_column='categoryID')  # Field name made lowercase.
     name = models.CharField(max_length=128)
-    enabled = models.IntegerField()
+    enabled = models.BooleanField()
     description = models.TextField()
     price = models.FloatField()
 
@@ -101,11 +101,11 @@ class Product(models.Model):
 
 
 class ProductCategory(models.Model):
-    categoryid = models.AutoField(db_column='categoryID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='categoryID', primary_key=True)  # Field name made lowercase.
     parentid = models.ForeignKey('self', models.DO_NOTHING, db_column='parentID', blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=255)
-    enabled = models.IntegerField()
+    enabled = models.BooleanField()
 
     class Meta:
         managed = False
@@ -170,7 +170,7 @@ class User(models.Model):
     firstName = models.CharField(db_column='name', max_length=32)
     lastName = models.CharField(db_column='surname', max_length=32)
     password = models.CharField(max_length=32)
-    enabled = models.IntegerField()
+    enabled = models.BooleanField()
     roles = models.ManyToManyField(Role, through='UserRole')
 
     class Meta:
