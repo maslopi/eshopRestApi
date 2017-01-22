@@ -3,7 +3,7 @@
 
 Co potrzebne:
 
-Do edycji PyCharm od JetBeans (ale dla mnie to był edytor tekstowy w zasadzie bo i tak wszystko poza edycją kodu robi się z konsoli)
+Do edycji PyCharm od JetBeans (ale dla mnie to był edytor tekstowy w zasadzie bo i tak wszystko poza edycją kodu robi się z konsoli) </br>
 MySQL (Ja używam Xamppa z MySQL i Apache, polecam)
 Python 3.4 z najnowszym Django
 Reszta możliwe, że jest zainstalowana ze środowiskiem które wam wrzuciłem.
