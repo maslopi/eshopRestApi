@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 from eshopRest import views
-from eshopRest.views import RulesViewSet, RoleViewSet, CompanyDataViewSet, api_root
+from eshopRest.views import RulesViewSet, RoleViewSet, CompanyDataViewSet, AttachmentViewSet, api_root
+from eshopRest.views import ProductViewSet
 from rest_framework import renderers
 
 rules_list = RulesViewSet.as_view({
@@ -37,6 +38,49 @@ companydata_detail = CompanyDataViewSet.as_view({
     'delete': 'destroy'
 })
 
+attachment_list = AttachmentViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+attachment_detail = AttachmentViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+product_list = ProductViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+product_detail = ProductViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+productcategory_list = ProductViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+productcategory_detail = ProductViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+article_list = ProductViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+article_detail = ProductViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
 
 urlpatterns = format_suffix_patterns([
     url(r'^$', api_root),
@@ -46,4 +90,12 @@ urlpatterns = format_suffix_patterns([
     url(r'^role/(?P<pk>[0-9]+)/$', role_detail, name='role-detail'),
     url(r'^companydata/$', companydata_list, name='companydata-list'),
     url(r'^companydata/(?P<pk>[0-9]+)/$', companydata_detail, name='companydata-detail'),
+    url(r'attachment/$', attachment_list, name='attachment-list'),
+    url(r'attachment/(?P<pk>[0-9]+)/$', attachment_detail, name='attachment-detail'),
+    url(r'product/$', product_list, name='product-list'),
+    url(r'product/(?P<pk>[0-9]+)/$', product_detail, name='product-detail'),
+    url(r'productcategory/$', productcategory_list, name='productcategory-list'),
+    url(r'productcategory/(?P<pk>[0-9]+)/$', productcategory_detail, name='productcategory-detail'),
+    url(r'article/$', article_list, name='article-list'),
+    url(r'article/(?P<pk>[0-9]+)/$', article_detail, name='article-detail')
 ])
