@@ -129,7 +129,7 @@ class ProductFeedback(models.Model):
 
 
 class ProductRate(models.Model):
-    rateid = models.AutoField(db_column='rateID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='rateID', primary_key=True)  # Field name made lowercase.
     productid = models.ForeignKey(Product, models.DO_NOTHING, db_column='productID')  # Field name made lowercase.
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
     rate = models.IntegerField()

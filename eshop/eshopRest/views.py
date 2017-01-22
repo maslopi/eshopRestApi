@@ -22,6 +22,8 @@ from eshopRest.models import CompanyFeedback
 from eshopRest.serializers import CompanyFeedbackSerializer
 from eshopRest.models import ProductFeedback
 from eshopRest.serializers import ProductFeedbackSerializer
+from eshopRest.models import ProductRate
+from eshopRest.serializers import ProductRateSerializer
 
 
 class RulesViewSet(viewsets.ModelViewSet):
@@ -63,3 +65,7 @@ class CompanyFeedbackViewSet(viewsets.ModelViewSet):
 class ProductFeedbackViewSet(viewsets.ModelViewSet):
     queryset = ProductFeedback.objects.all()
     serializer_class = ProductFeedbackSerializer
+
+class ProductRateViewSet(viewsets.ModelViewSet):
+    queryset = ProductRate.objects.all()
+    serializer_class = ProductRateSerializer

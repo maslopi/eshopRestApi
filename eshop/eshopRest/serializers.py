@@ -12,6 +12,7 @@ from eshopRest.models import UserRole
 from eshopRest.models import OrderState
 from eshopRest.models import CompanyFeedback
 from eshopRest.models import ProductFeedback
+from eshopRest.models import ProductRate
 
 class RulesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -98,3 +99,11 @@ class ProductFeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductFeedback
         fields = ('id', 'productid', 'parentid', 'userid', 'description', 'user', 'product')
+
+class ProductRateSerializer(serializers.ModelSerializer):
+    user = UserSerializer(source='userid', read_only=True)
+    product = ProductSerializer(source='productid', read_only=True)
+
+    class Meta:
+        model = ProductRate
+        fields = ('id', 'productid', 'userid', 'rate', 'user', 'product')
