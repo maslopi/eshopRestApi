@@ -8,6 +8,8 @@ from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework import renderers
+from eshopRest.models import Order
+from eshopRest.serializers import OrderSerializer
 
 
 class RulesViewSet(viewsets.ModelViewSet):
@@ -21,3 +23,8 @@ class RoleViewSet(viewsets.ModelViewSet):
 class CompanyDataViewSet(viewsets.ModelViewSet):
     queryset = CompanyData.objects.all()
     serializer_class = CompanyDataSerializer
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+

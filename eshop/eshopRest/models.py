@@ -55,7 +55,7 @@ class CompanyFeedback(models.Model):
 
 
 class Order(models.Model):
-    orderid = models.AutoField(db_column='orderID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='orderID', primary_key=True)  # Field name made lowercase.
     userid = models.ForeignKey('User', models.DO_NOTHING, db_column='userID')  # Field name made lowercase.
     stateid = models.ForeignKey('OrderState', models.DO_NOTHING, db_column='stateID')  # Field name made lowercase.
     date = models.DateTimeField()
@@ -78,7 +78,7 @@ class OrderProduct(models.Model):
 
 
 class OrderState(models.Model):
-    stateid = models.AutoField(db_column='stateID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='stateID', primary_key=True)  # Field name made lowercase.
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=255)
 
@@ -165,12 +165,13 @@ class Rules(models.Model):
 
 
 class User(models.Model):
-    userid = models.AutoField(db_column='userID', primary_key=True)  # Field name made lowercase.
+    id = models.AutoField(db_column='userID', primary_key=True)  # Field name made lowercase.
     email = models.CharField(max_length=32)
-    name = models.CharField(max_length=32)
-    surname = models.CharField(max_length=32)
+    firstName = models.CharField(db_column='name', max_length=32)
+    lastName = models.CharField(db_column='surname', max_length=32)
     password = models.CharField(max_length=32)
     enabled = models.IntegerField()
+    roles = models.ManyToManyField(Role, through='UserRole')
 
     class Meta:
         managed = False
