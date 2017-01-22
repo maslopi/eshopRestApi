@@ -95,6 +95,10 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField()
 
+    def get_attachments(self):
+        attachments = Attachment.objects.filter(productid=self.id)
+        return attachments
+
     class Meta:
         managed = False
         db_table = 'product'

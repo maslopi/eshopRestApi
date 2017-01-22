@@ -1,2 +1,4 @@
 eshop/.idea/*
 eshop/env/*
+.idea/*
+env/*

@@ -55,15 +55,25 @@ class AttachmentSerializer(serializers.ModelSerializer):
         model = Attachment
         fields = ('id', 'productid', 'name', 'path', 'extension')
 
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = ('id', 'categoryid', 'name', 'enabled', 'description', 'price')
+class RecursiveSerializer(serializers.Serializer):
+    def to_representation(self, instance):
+        serializer = self.parent.__class__(instance, context=self.context)
+        return serializer.data
 
 class ProductCategorySerializer(serializers.ModelSerializer):
+    parent = RecursiveSerializer(source='parentid', many=False, read_only=True)
+
     class Meta:
         model = ProductCategory
         fields = ('id', 'parentid', 'name', 'description', 'enabled', 'parent')
+
+class ProductSerializer(serializers.ModelSerializer):
+    attachments = AttachmentSerializer(many=True, read_only=True, source='get_attachments')
+    category = ProductCategorySerializer(source='categoryid')
+
+    class Meta:
+        model = Product
+        fields = ('id', 'categoryid', 'name', 'enabled', 'description', 'price', 'attachments','category')
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
