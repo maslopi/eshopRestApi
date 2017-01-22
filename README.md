@@ -22,3 +22,8 @@ Jak już serwer stoi to można robić zmiany w projekcie i automatycznie je łap
 
 
 -- Na pewno nie wszystko napisałem, ale nie wiem, które kroki będziecie musieli przejść. Może to wystarczy! --
+
+
+Tutorial do przejżenia (W nim min. tabele powiązane ze sobą kluczami. No i jak będą jakieś problemy z odpaleniem projektu to też w nim to wszystko robią):
+
+http://www.django-rest-framework.org/tutorial/1-serialization/
