@@ -131,3 +131,10 @@ class FindUserViewSet(generics.RetrieveAPIView):
         email = self.kwargs['email']
         password = self.kwargs['password']
         return User.objects.get(email=email, password=password)
+
+class CategoryProductViewSet(generics.ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        categoryName = self.kwargs['categoryName']
+        return Product.objects.filter(categoryID__name=categoryName)

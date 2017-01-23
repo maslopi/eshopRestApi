@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'productfeedbacks/user/(?P<email>.+)', views.UserProductFeedbackViewSet.as_view()),
     url(r'productfeedbacks/product/(?P<id>.+)', views.ProductProductFeedbackViewSet.as_view()),
     url(r'users/find/(?P<email>.+)/(?P<password>.+)', views.FindUserViewSet.as_view()),
+    url(r'products/category/(?P<categoryName>.+)', views.CategoryProductViewSet.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
