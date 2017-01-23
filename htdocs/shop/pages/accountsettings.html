@@ -1,0 +1,65 @@
+<small>{{loggedUser.firstName}}</small>
+<small>{{loggedUser.lastName}}</small>
+<small>{{loggedUser.email}}</small>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Ustawienia konta
+      <small></small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Strona główna</a>
+      </li>
+      <li class="active">Ustawienia konta</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+
+    <div ng-if="isLogged">
+        <form class="form-horizontal" id="newUser" method="put" ng-submit="update(loggedUser)">
+          <div class="form-group">
+            <label class="control-label col-sm-2">Imię:</label>
+            <div class="col-sm-8">
+              <input id="a" disabled ng-model="loggedUser.firstName" type="text" class="form-control" required data-validation-required-message="Please enter your name.">
+            </div>
+            <p class="help-block"></p>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Nazwisko:</label>
+            <div class="col-sm-8">
+              <input id="b" disabled ng-model="loggedUser.lastName" type="text" class="form-control" required data-validation-required-message="Please enter your surname.">
+            </div>
+            <p class="help-block"></p>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Adres email:</label>
+            <div class="col-sm-8">
+              <input id="c" disabled ng-model="loggedUser.email" type="email" class="form-control" required data-validation-required-message="Please enter your email address.">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">Hasło:</label>
+            <div class="col-sm-8">
+              <input id="d" disabled ng-model="loggedUser.password" type="password" class="form-control" required data-validation-required-message="Please enter your password address.">
+            </div>
+          </div>
+          <div class="col-sm-5">
+          </div>
+          <div>
+            <div id="x" hidden>
+              <input id="e" class="btn btn-primary" type="submit" id="submit" value="Zapisz" />
+            </div>
+            <div id="y">
+              <button ng-click="editFields()" class="btn btn-primary btn-md">Edytuj<i class="fa"></i></button>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div id="success"></div>
+  </div>
+</div>

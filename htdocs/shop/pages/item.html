@@ -1,0 +1,97 @@
+
+
+<div>
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        Produkt
+        <small>{{product.name}}</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li>
+          <a href="#/categories">Strona główna</a>
+        </li>
+        <li>
+          <a href="#/products/category/{{product.category.name}}">{{product.category.name}}</a>
+        </li>
+        <li class="active">{{product.name}}</li>
+      </ol>
+    </div>
+  </div>
+  <!-- Portfolio Item Row -->
+  <div class="row">
+    <div class="col-md-8">
+      <img class="img-responsive" src={{product.attachments[0].path}} alt="" width="500" height="300">
+    </div>
+    <div class="col-md-4">
+      <h3>Opis produktu</h3>
+      <p>{{product.description}}</p>
+      <h4>Cena: {{product.price}} zł</h4>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="quantity">
+          <h4>Ilość:</h4>
+        </label>
+        <div class="col-xs-4">
+          <input type="number" min="1" ng-init="quantity=1" ng-model="quantity" class="form-control" id="quantity">
+        </div>
+      </div>
+      <br>
+      <br>
+      <button ng-click="addProduct(product.id, quantity)" class="btn btn-primary">
+        <i class="glyphicon glyphicon-shopping-cart"></i>Dodaj
+      </button>
+      <center>
+        <font color="green">
+          <label>{{text}}</label>
+        </font>
+      </center>
+    </div>
+  </div>
+  <br>
+  <div class="well">
+    <h4>Dodaj komentarz</h4>
+      <div ng-show=isLogged()>
+        <form role="form" ng-init="productFeedback.userID = getUserId()" method="post" ng-submit="create(productFeedback)">
+          <div class="form-group" ng-init="productFeedback.productID">
+            <textarea ng-model="productFeedback.description" class="form-control" rows="3"></textarea>
+          </div>
+          <input id="e" class="btn btn-primary" type="submit" id="submit" value="Dodaj" />
+        </form>
+      </div>
+    <hr>
+    <!-- Comment -->
+    <div class="media" ng-repeat="PF in productsFeedback | orderBy: '-id'">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">
+          {{PF.user.firstName}} {{PF.user.lastName}}
+        </h4>
+        <p>{{PF.description}}</p>
+        <div class="ratings">
+          <p>
+            <span ng-repeat="n in [] | range:productRates[0].rate" class="glyphicon glyphicon-star"></span>
+            <span ng-repeat="n in [] | range: (10 - productRates[0].rate)" class="glyphicon glyphicon-star-empty"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <!-- Related Projects Row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="page-header">Podobne produkty</h3>
+      </div>
+      <div class="col-sm-3 col-xs-6" ng-repeat="x in category | limitTo:4">
+        <a href="#/products/{{x.id}}">
+          <img class="img-responsive img-hover img-related" src={{x.attachments[0].path}} alt="">
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>

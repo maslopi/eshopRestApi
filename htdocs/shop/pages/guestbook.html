@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Księga gości
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="index.html">Strona główna</a>
+      </li>
+      <li class="active">Księga gości</li>
+    </ol>
+  </div>
+</div>
+<!-- Feedback - add form -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well">
+      <h4>Wpisz się do księgi gości:</h4>
+        <div ng-show=isLogged()>
+          <form role="form" ng-init="feedback.userID = getUserId()" method="post" ng-submit="create(feedback)">
+            <div class="form-group">
+              <textarea ng-model="feedback.description" class="form-control" rows="3"></textarea>
+              <input type="number" ng-model="feedback.rate" name="text" placeholder="ocena" min="1" max="10"/> (od 1 do 10)
+            </div>
+            <input id="e" class="btn btn-primary" type="submit" id="submit" value="Dodaj" />
+          </form>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Feedbacks - display comments -->
+    <div class="media" ng-repeat="feedback in feedbacks | orderBy: '-id'"">
+      <div class="media-body">
+        <h4 class="media-heading">{{feedback.user.firstName}} {{feedback.user.lastName}}
+        </h4>
+        <p>{{feedback.description}}</p>
+        <div class="ratings">
+          <p>
+            <span ng-repeat="n in [] | range:feedback.rate" class="glyphicon glyphicon-star"></span>
+            <span ng-repeat="n in [] | range: (10 - feedback.rate)" class="glyphicon glyphicon-star-empty"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

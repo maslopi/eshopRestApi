@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Edytowanie artykułu</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row" ng-init="retrieve()">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <form id="productEdit" method="post" ng-submit="edit(article)">
+                    <div class="form-group">
+                        <label>Tytuł</label>
+                        <input class="form-control" type="text"  maxlength="120" ng-model="article.title" autofocus="true" required
+                               placeholder="Podaj tytuł artykułu">
+                    </div>
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input class="form-control" type="text" ng-model="article.date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Opis</label>
+                        <textarea class="form-control" ng-model="article.body" required
+                                  placeholder="Treść"></textarea>
+                    </div>
+                    <button class="btn btn-primary pull-right" ng-click="submit()">Zapisz artykuł</i>
+                    </button>
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->

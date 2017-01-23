@@ -1,0 +1,61 @@
+<style type="text/css">
+  .form-login {
+    background-color: #EDEDED;
+    padding: 10px 20px 20px;
+    border-radius: 15px;
+    border: 5px #d2d2d2;
+    box-shadow: 0 1px 0 #cfcfcf;
+  }
+
+  h4 {
+    border: 0 solid #fff;
+    border-bottom-width: 1px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .form-control {
+    border-radius: 10px;
+  }
+
+  .wrapper {
+    text-align: center;
+  }
+</style>
+
+<oauth site="OAUTH_SERVER_URI_HERE" client-id="CLIENT_ID_HERE" redirect-uri="REDIRECT_URI_HERE" profile-uri="PROFILE_URI_HERE" scope="SCOPE_HERE">
+</oauth>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Logowanie
+      <small></small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Strona główna</a>
+      </li>
+      <li class="active">Logowanie</li>
+    </ol>
+  </div>
+</div>
+<!-- /.row -->
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
+    <div class="form-login">
+      <h4>Witaj!</h4>
+      <input ng-model="user.email" ng-model-options="{ getterSetter: true }"  type="text" id="username" ng-data="username" class="form-control input-sm chat-input" placeholder="login" />
+      </br>
+      <input ng-model="user.password" ng-model-options="{ getterSetter: true }"  type="text" id="password" ng-data="password" class="form-control input-sm chat-input" placeholder="hasło" />
+      </br>
+      <div class="wrapper">
+        <span class="group-btn">
+          <button ng-click="login(user.email, user.password)" class="btn btn-primary btn-md">Zaloguj<i class="fa fa-sign-in"></i></button>
+        </span>
+      </div>
+      <span ng-show="wrongLogin">{{ text }}</span>
+    </div>
+
+  </div>
+</div>
