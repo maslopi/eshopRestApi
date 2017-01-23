@@ -103,3 +103,17 @@ class UserArticleViewSet(generics.ListAPIView):
     def get_queryset(self):
         surname = self.kwargs['surname']
         return Article.objects.filter(userID__lastName=surname)
+
+class UserProductFeedbackViewSet(generics.ListAPIView):
+    serializer_class = ProductFeedbackSerializer
+
+    def get_queryset(self):
+        email = self.kwargs['email']
+        return ProductFeedback.objects.filter(userID__email=email)
+
+class ProductProductFeedbackViewSet(generics.ListAPIView):
+    serializer_class = ProductFeedbackSerializer
+
+    def get_queryset(self):
+        productId = self.kwargs['id']
+        return ProductFeedback.objects.filter(productID=productId)

@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'users/(?P<userID>.+)/orders', views.UserOrderViewSet.as_view()),
     url(r'articles/user/(?P<surname>.+)', views.UserArticleViewSet.as_view()),
     url(r'attachments/product/(?P<id>.+)', views.AttachmentList.as_view()),
+    url(r'productfeedbacks/user/(?P<email>.+)', views.UserProductFeedbackViewSet.as_view()),
+    url(r'productfeedbacks/product/(?P<id>.+)', views.ProductProductFeedbackViewSet.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
