@@ -138,3 +138,10 @@ class CategoryProductViewSet(generics.ListAPIView):
     def get_queryset(self):
         categoryName = self.kwargs['categoryName']
         return Product.objects.filter(categoryID__name=categoryName)
+
+class ProductProductRateViewSet(generics.ListAPIView):
+    serializer_class = ProductRateSerializer
+
+    def get_queryset(self):
+        productId = self.kwargs['id']
+        return ProductRate.objects.filter(productID=productId)
