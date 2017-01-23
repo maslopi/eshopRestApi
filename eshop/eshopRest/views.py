@@ -24,6 +24,7 @@ from eshopRest.models import ProductFeedback
 from eshopRest.serializers import ProductFeedbackSerializer
 from eshopRest.models import ProductRate
 from eshopRest.serializers import ProductRateSerializer
+from eshopRest.models import User;
 
 
 class RulesViewSet(viewsets.ModelViewSet):
@@ -76,3 +77,10 @@ class UserOrderViewSet(generics.ListAPIView):
     def get_queryset(self):
         userId = self.kwargs['userID']
         return Order.objects.filter(userID = userId)
+
+class UserArticleViewSet(generics.ListAPIView):
+    serializer_class =  ArticleSerializer
+
+    def get_queryset(self):
+        username = self.kwargs['username']
+        return Article.objects.filter(userID__lastName=username)
