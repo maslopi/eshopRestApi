@@ -127,5 +127,9 @@ app.controller("ShoppingCartController", ['$rootScope', '$scope', '$cookies', '$
         });
       });
     };
+      
+    $scope.isUserLogged = function() {
+        return !($cookies.get('userId') == null || $cookies.get('userId') == "");
+    }
   }
 ]);

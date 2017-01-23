@@ -58,7 +58,7 @@ app.config(['$routeProvider',
 		    }).
 		    otherwise({
           //templateUrl: 'pages/404.html'
-			    redirectTo: 'index'
+			    redirectTo: '/index'
 		    });
 }]);
 

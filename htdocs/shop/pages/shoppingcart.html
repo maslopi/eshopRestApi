@@ -61,7 +61,7 @@
           <strong>Do zapłaty: {{total}} zł</strong>
         </td>
         <td>
-          <button ng-click="openDefault(total)" class="btn btn-primary btn-md">Zrealizuj platnosc <i class="fa fa-angle-right"></i></button>
+          <button ng-click="openDefault(total)" class="btn btn-primary btn-md" ng-disabled="!isUserLogged()">Zrealizuj platnosc <i class="fa fa-angle-right"></i></button>
         </td>
       </tr>
     </tfoot>
