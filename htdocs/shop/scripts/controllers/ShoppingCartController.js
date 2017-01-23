@@ -109,9 +109,7 @@ app.controller("ShoppingCartController", ['$rootScope', '$scope', '$cookies', '$
 
         var order = {
           "products": [{
-            "product": {
-              "id": value.id
-            },
+            "productID": value.id,
             "amount": value.quantity,
             "price": value.price
           }]

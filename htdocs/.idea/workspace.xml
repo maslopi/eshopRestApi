@@ -22,38 +22,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/ProductController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15454546">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="28" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductsService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/ProductsService.js">
+      <file leaf-file-name="OrdersService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/scripts/services/OrdersService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticlesService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/ArticlesService.js">
+      <file leaf-file-name="shoppingcarthistory.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/pages/shoppingcarthistory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RulesController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/RulesController.js">
+      <file leaf-file-name="AttachmentsService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/scripts/services/AttachmentsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5924242">
+              <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ProductsController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/OrdersController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="19.518518">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingCartController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ShoppingCartController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="114" column="12" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/CategoriesController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -62,61 +102,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportsController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/ReportsController.js">
+      <file leaf-file-name="shoppingcart.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/pages/shoppingcart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="63" column="97" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyFeedbacksService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/CompanyFeedbacksService.js">
+      <file leaf-file-name="payment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop/pages/payment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrdersService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/OrdersService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductsFeedbacksService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/ProductsFeedbacksService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="68" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RulesService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/RulesService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/scripts/services/UsersService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -152,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin/scripts/controllers/SubcategoriesTableController.js" />
         <option value="$PROJECT_DIR$/admin/scripts/controllers/UsersTableController.js" />
         <option value="$PROJECT_DIR$/admin/pages/products.html" />
         <option value="$PROJECT_DIR$/admin/pages/index.html" />
@@ -171,8 +170,6 @@
         <option value="$PROJECT_DIR$/shop/pages/register.html" />
         <option value="$PROJECT_DIR$/shop/scripts/controllers/UsersController.js" />
         <option value="$PROJECT_DIR$/shop/scripts/controllers/CategoriesController.js" />
-        <option value="$PROJECT_DIR$/shop/scripts/controllers/ShoppingCartController.js" />
-        <option value="$PROJECT_DIR$/shop/pages/shoppingcarthistory.html" />
         <option value="$PROJECT_DIR$/admin/pages/orders.html" />
         <option value="$PROJECT_DIR$/admin/scripts/controllers/ArticleController.js" />
         <option value="$PROJECT_DIR$/admin/scripts/controllers/CategoriesTableController.js" />
@@ -191,10 +188,8 @@
         <option value="$PROJECT_DIR$/shop/scripts/controllers/ProductsFeedbackController.js" />
         <option value="$PROJECT_DIR$/shop/pages/item.html" />
         <option value="$PROJECT_DIR$/shop/scripts/services/ProductsFeedbackService.js" />
-        <option value="$PROJECT_DIR$/shop/scripts/services/OrdersService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/CompanyDataService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/RulesService.js" />
-        <option value="$PROJECT_DIR$/admin/scripts/services/AttachmentsService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/CategoriesService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/CompanyFeedbacksService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/OrdersService.js" />
@@ -203,6 +198,11 @@
         <option value="$PROJECT_DIR$/admin/scripts/services/ProductsService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/services/ArticlesService.js" />
         <option value="$PROJECT_DIR$/admin/scripts/controllers/ProductController.js" />
+        <option value="$PROJECT_DIR$/shop/scripts/controllers/ShoppingCartController.js" />
+        <option value="$PROJECT_DIR$/shop/scripts/controllers/OrdersController.js" />
+        <option value="$PROJECT_DIR$/shop/scripts/services/OrdersService.js" />
+        <option value="$PROJECT_DIR$/shop/pages/shoppingcarthistory.html" />
+        <option value="$PROJECT_DIR$/admin/scripts/services/AttachmentsService.js" />
       </list>
     </option>
   </component>
@@ -910,12 +910,12 @@
       <workItem from="1463866579138" duration="95000" />
       <workItem from="1473867730177" duration="32000" />
       <workItem from="1484497080882" duration="16015000" />
-      <workItem from="1485184314735" duration="8744000" />
+      <workItem from="1485184314735" duration="11438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86479000" />
+    <option name="totallyTimeSpent" value="89173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -930,7 +930,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.159375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30223125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -968,43 +968,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/CategoriesTableController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/CompanyDataController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/CustomersTableController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/GuestbookTableController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/IndexController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/LoginController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1196,14 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ProductsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ProductsFeedbackController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.6666665">
@@ -1244,34 +1199,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/OrdersController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop/scripts/services/OrdersService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9259257">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/ArticleController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/scripts/services/AttachmentsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1366,8 +1297,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/scripts/controllers/ProductController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15454546">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="28" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ProductsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/pages/shoppingcart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="63" column="97" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/pages/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/CategoriesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/ShoppingCartController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="114" column="12" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/scripts/controllers/OrdersController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.518518">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/scripts/services/OrdersService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/pages/shoppingcarthistory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/scripts/services/AttachmentsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5924242">
+          <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
           <folding />
         </state>
       </provider>

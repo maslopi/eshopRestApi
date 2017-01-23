@@ -66,7 +66,7 @@ class ProductCategorySerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     attachments = AttachmentSerializer(many=True, read_only=True, source='get_attachments')
-    category = ProductCategorySerializer(source='categoryID')
+    category = ProductCategorySerializer(source='categoryID', read_only=True)
 
     class Meta:
         model = Product

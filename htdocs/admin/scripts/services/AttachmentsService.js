@@ -3,7 +3,7 @@ app.service('AttachmentsService', function ($http) {
 
     const attachmentsLocation = function (path) {
         path = path || '';
-        return (Shop.server + 'attachment/' + path);
+        return (Shop.server + 'attachments/' + path);
     };
 
     this.create = function (attachment) {
@@ -21,7 +21,7 @@ app.service('AttachmentsService', function ($http) {
     };
 
     this.delete = function (id) {
-        var promise = $http.delete(attachmentsLocation(id + '/')).then(function (response) {
+        var promise = $http.delete(Shop.server + 'attachment/' + id + '/').then(function (response) {
             return response;
         });
         return promise;

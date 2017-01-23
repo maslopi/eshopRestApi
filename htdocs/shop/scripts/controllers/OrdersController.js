@@ -8,6 +8,7 @@ app.controller('OrdersController', ['$scope', 'OrdersService', 'UsersService', '
 
   $scope.create = function(order) {
     $scope.userId = $cookieStore.get('userId');
+    order.userID = $scope.userId;
     OrdersService.create(order, $scope.userId).then(function(response) {
       $scope.order = {};
       $scope.retrieveAll();

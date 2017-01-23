@@ -44,8 +44,8 @@ app.service('OrdersService', function ($http) {
 		return promise;
 	};
 
-	this.update = function (role) {
-		var promise = $http.put(ordersLocation(), role).then(function (response) {
+	this.update = function (order) {
+		var promise = $http.put(ordersLocation(), order).then(function (response) {
 			return response;
 		});
 		return promise;
