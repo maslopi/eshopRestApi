@@ -82,5 +82,5 @@ class UserArticleViewSet(generics.ListAPIView):
     serializer_class =  ArticleSerializer
 
     def get_queryset(self):
-        username = self.kwargs['username']
-        return Article.objects.filter(userID__lastName=username)
+        surname = self.kwargs['surname']
+        return Article.objects.filter(userID__lastName=surname)

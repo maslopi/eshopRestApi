@@ -22,6 +22,6 @@ router.register(r'productrate', views.ProductRateViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'users/(?P<userID>.+)/orders', views.UserOrderViewSet.as_view()),
-    url(r'articles/user/(?P<username>.+)', views.UserArticleViewSet.as_view()),
+    url(r'articles/user/(?P<surname>.+)', views.UserArticleViewSet.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
