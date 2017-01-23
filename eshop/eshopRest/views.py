@@ -1,3 +1,4 @@
+from django.http import Http404
 from eshopRest.models import Rules
 from eshopRest.serializers import RulesSerializer
 from eshopRest.models import Role
@@ -24,7 +25,10 @@ from eshopRest.models import ProductFeedback
 from eshopRest.serializers import ProductFeedbackSerializer
 from eshopRest.models import ProductRate
 from eshopRest.serializers import ProductRateSerializer
-from eshopRest.models import User;
+
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
 
 
 class RulesViewSet(viewsets.ModelViewSet):
@@ -42,6 +46,21 @@ class CompanyDataViewSet(viewsets.ModelViewSet):
 class AttachmentViewSet(viewsets.ModelViewSet):
     queryset = Attachment.objects.all()
     serializer_class = AttachmentSerializer
+
+class AttachmentList(APIView):
+    def post(self, request, id):
+        try:
+            Product.objects.get(id=id)
+        except Product.DoesNotExist:
+            raise Http404
+
+        data = request.data
+        data['productID'] = id
+        serializer = AttachmentSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
