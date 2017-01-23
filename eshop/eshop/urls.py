@@ -15,6 +15,7 @@ router.register(r'order', views.OrderViewSet)
 router.register(r'companyfeedback', views.CompanyFeedbackViewSet)
 router.register(r'productfeedback', views.ProductFeedbackViewSet)
 router.register(r'productrate', views.ProductRateViewSet)
+router.register(r'user', views.UserViewSet)
 
 
 # The API URLs are now determined automatically by the router.
@@ -26,5 +27,6 @@ urlpatterns = [
     url(r'attachments/product/(?P<id>.+)', views.AttachmentList.as_view()),
     url(r'productfeedbacks/user/(?P<email>.+)', views.UserProductFeedbackViewSet.as_view()),
     url(r'productfeedbacks/product/(?P<id>.+)', views.ProductProductFeedbackViewSet.as_view()),
+    url(r'users/find/(?P<email>.+)/(?P<password>.+)', views.FindUserViewSet.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

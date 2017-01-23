@@ -25,6 +25,8 @@ from eshopRest.models import ProductFeedback
 from eshopRest.serializers import ProductFeedbackSerializer
 from eshopRest.models import ProductRate
 from eshopRest.serializers import ProductRateSerializer
+from eshopRest.models import User
+from eshopRest.serializers import UserSerializer
 
 from rest_framework.response import Response
 from rest_framework import status
@@ -117,3 +119,15 @@ class ProductProductFeedbackViewSet(generics.ListAPIView):
     def get_queryset(self):
         productId = self.kwargs['id']
         return ProductFeedback.objects.filter(productID=productId)
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class FindUserViewSet(generics.RetrieveAPIView):
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        email = self.kwargs['email']
+        password = self.kwargs['password']
+        return User.objects.get(email=email, password=password)

@@ -9,6 +9,7 @@ from eshopRest.views import ArticleViewSet
 from eshopRest.views import CompanyFeedbackViewSet
 from eshopRest.views import ProductFeedbackViewSet
 from eshopRest.views import ProductRateViewSet
+from eshopRest.views import UserViewSet
 from rest_framework import renderers
 
 rules_list = RulesViewSet.as_view({
@@ -121,6 +122,17 @@ productrate_detail = ProductRateViewSet.as_view({
     'delete': 'destroy'
 })
 
+user_list = UserViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+user_detail = UserViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
 urlpatterns = format_suffix_patterns([
     url(r'^$', api_root),
     url(r'^rules/$', rules_list, name='rules-list'),
@@ -142,5 +154,7 @@ urlpatterns = format_suffix_patterns([
     url(r'productfeedback/$', productfeedback_list, name='productfeedback-list'),
     url(r'productfeedback/(?P<pk>[0-9]+)/$', productfeedback_detail, name='productfeedback-detail'),
     url(r'productrate/$', productrate_list, name='productrate-list'),
-    url(r'productrate/(?P<pk>[0-9]+)/$', productrate_detail, name='productrate-detail')
+    url(r'productrate/(?P<pk>[0-9]+)/$', productrate_detail, name='productrate-detail'),
+    url(r'user/$', user_list, name='user-list'),
+    url(r'user/(?P<pk>[0-9]+)/$', user_detail, name='user-detail')
 ])
