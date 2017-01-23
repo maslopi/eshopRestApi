@@ -103,15 +103,24 @@ class ProductRateSerializer(serializers.ModelSerializer):
         fields = ('id', 'productID', 'userID', 'rate', 'user', 'product')
 
 class OrderProductSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(source='productID')
+    product = ProductSerializer(source='productID', read_only=True)
     class Meta:
         model = OrderProduct
-        fields = ('id', 'productID', 'amount', 'price', 'product')
+        fields = ('productID', 'amount', 'price', 'product')
 
 class OrderSerializer(serializers.ModelSerializer):
-    user = UserSerializer(source='userID')
-    orderState = OrderStateSerializer(source='stateID')
-    products = OrderProductSerializer(many=True, read_only=True, source='get_products')
+    user = UserSerializer(source='userID', read_only=True)
+    orderState = OrderStateSerializer(source='stateID', read_only=True)
+    products = OrderProductSerializer(many=True, read_only=False, source='get_products')
     class Meta:
         model = Order
         fields = ('id', 'userID', 'stateID', 'date', 'user', 'orderState', 'products')
+
+    def create(self, validated_data):
+        print(validated_data)
+        productsData = validated_data.pop('get_products')
+        order = Order.objects.create(**validated_data)
+        for orderProduct in productsData:
+
+           OrderProduct.objects.create(id=order, **orderProduct)
+        return order
