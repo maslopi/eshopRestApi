@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Raporty</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Raport zamówień
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <form ng-submit="generate()">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <label>Miesiąc</label>
+                            <input class="form-control" type="date" ng-model="reportMonth" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button style="margin:10px 0" class="btn btn-primary" ng-click="submit()">Generuj</i>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+                <ul>
+                    <li>Ilość zamówień: <b>{{ordersCount}}</b></li>
+                    <li>Ilość sprzedanych przedmiotów: <b>{{itemsCount}}</b></li>
+                    <li>Wartość zamówień: <b>{{value}}</b></li>
+                </ul>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->

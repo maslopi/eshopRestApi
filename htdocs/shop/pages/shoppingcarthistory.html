@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Historia
+      <small></small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="index.html">Strona główna</a>
+      </li>
+      <li class="active">Historia</li>
+    </ol>
+  </div>
+</div>
+
+<div>
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width:50%">Produkt</th>
+        <th style="width:8%">Cena</th>
+        <th style="width:4%">Ilość</th>
+        <th style="width:15%" class="text-center">Łącznie</th>
+        <th style="width:11%">Data zakupu</th>
+        <th style="width:11%">Status zakupu</th>
+
+      </tr>
+    </thead>
+    <tbody ng-repeat="ord in orders">
+          <tr ng-repeat="produc in ord.products | orderBy: '+id'"">
+            <td data-th="Product">
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <h4 class="nomargin">{{produc.product.name}}</h4>
+                </div>
+              </div>
+            </td>
+            <td data-th="Price">{{produc.price}} zł</td>
+            <td data-th="Quantity" class="text-center">
+              {{produc.amount}}
+              <!-- <input type="number" class="form-control text-center" value={{p.quantity}}> -->
+            </td>
+            <td data-th="Subtotal" class="text-center">{{produc.amount*produc.price}} zł</td>
+            <td data-th="Date">{{ord.date}}</td>
+            <td data-th="Date">              {{ord.orderState.name}}</td>
+
+          </tr>
+    </tbody>
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center">
+          <strong>Total {{total}}</strong>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

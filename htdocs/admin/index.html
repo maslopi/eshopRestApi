@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+    <title>Mutlitenant Shop</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="theme/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="theme/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- PACE JS -->
+    <link href="theme/css/pace.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrapper" ng-controller="LoginController">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" ng-show=isLogged()>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/admin/">Panel administracyjny</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown pull-right">
+            <a href="/">
+                <i class="fa fa-user fa-fw"></i>
+            </a>
+            <!-- /.dropdown-user -->
+        </li>
+        <li ng-show=isLogged() class="dropdown pull-right">
+            <a href ng-click="logout()">Wyloguj</a>
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                    </div>
+                    <!-- /input-group -->
+                </li>
+                <li>
+                    <a href="#/index"><i class="fa fa-dashboard fa-fw"></i> Panel</a>
+                </li>
+                <li>
+                    <a href="#/users"><i class="fa fa-male fa-fw"></i> Użytkownicy<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#/customers">Klienci</a>
+                        </li>
+                        <li>
+                            <a href="#/sellers">Sprzedawcy</a>
+                        </li>
+                        <li>
+                            <a href="#/moderators">Moderatorzy</a>
+                        </li>
+                        <li>
+                            <a href="#/administrators">Administratorzy</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#/categories"><i class="fa fa-align-justify fa-fw"></i> Kategorie</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#/products"><i class="fa fa-folder-open fa-fw"></i> Produkty</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isSalesman()>
+                    <a href="#/orders"><i class="fa fa-shopping-cart fa-fw"></i> Zamówienia</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isSalesman()>
+                    <a href="#/feedbacks"><i class="fa fa-comments fa-fw"></i> Komentarze</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isSalesman()>
+                    <a href="#/guestbook"><i class="fa fa-comment fa-fw"></i> Księga gości</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#/articles"><i class="fa fa-rss fa-fw"></i> Artykuły</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isSalesman()>
+                    <a href="#/reports"><i class="fa fa-bar-chart-o fa-fw"></i> Raporty</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isAdministrator()>
+                    <a href="#/rules"><i class="fa fa-tasks fa-fw"></i> Regulamin</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li ng-show=isAdministrator()>
+                    <a href="#/company-data"><i class="fa fa-copyright fa-fw"></i> Dane firmy</a>
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+
+<div id="page-wrapper">
+    <div id="ng-content" ng-view>
+
+    </div>
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="scripts/libs/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="scripts/libs/bootstrap.min.js"></script>
+
+<!-- PACE JS -->
+<script src="theme/js/pace.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="theme/js/sb-admin-2.js"></script>
+
+<!-- AngularJS -->
+<script src="scripts/libs/angularjs_1.2.25_angular.js"></script>
+<script src="scripts/libs/angularjs_1.2.25_angular-route.js"></script>
+<script src="scripts/libs/angularjs_1.2.25_angular-cookies.js"></script>
+
+<!-- Main constants and functions -->
+<script src="scripts/Shop.js"></script>
+
+<!-- Angular config -->
+<script src="scripts/config.js"></script>
+
+<!-- AngularJS Services -->
+<script src="scripts/services/ProductsService.js"></script>
+<script src="scripts/services/CategoriesService.js"></script>
+<script src="scripts/services/OrdersService.js"></script>
+<script src="scripts/services/UsersService.js"></script>
+<script src="scripts/services/ProductsFeedbacksService.js"></script>
+<script src="scripts/services/CompanyFeedbacksService.js"></script>
+<script src="scripts/services/ArticlesService.js"></script>
+<script src="scripts/services/ArticlesService.js"></script>
+<script src="scripts/services/RulesService.js"></script>
+<script src="scripts/services/CompanyDataService.js"></script>
+<script src="scripts/services/AttachmentsService.js"></script>
+
+<!-- AngularJS Controllers -->
+<script src="scripts/controllers/LoginController.js"></script>
+<script src="scripts/controllers/IndexController.js"></script>
+<script src="scripts/controllers/ProductsTableController.js"></script>
+<script src="scripts/controllers/CategoriesTableController.js"></script>
+<script src="scripts/controllers/SubcategoriesTableController.js"></script>
+<script src="scripts/controllers/ProductController.js"></script>
+<script src="scripts/controllers/ProductsFeedbacksTableController.js"></script>
+<script src="scripts/controllers/UsersTableController.js"></script>
+<script src="scripts/controllers/CustomersTableController.js"></script>
+<script src="scripts/controllers/SellersTableController.js"></script>
+<script src="scripts/controllers/ModeratorsTableController.js"></script>
+<script src="scripts/controllers/AdministratorsTableController.js"></script>
+<script src="scripts/controllers/UserController.js"></script>
+<script src="scripts/controllers/GuestbookTableController.js"></script>
+<script src="scripts/controllers/ArticlesTableController.js"></script>
+<script src="scripts/controllers/ArticleController.js"></script>
+<script src="scripts/controllers/RulesController.js"></script>
+<script src="scripts/controllers/CompanyDataController.js"></script>
+<script src="scripts/controllers/OrdersTableController.js"></script>
+<script src="scripts/controllers/ReportsController.js"></script>
+
+</body>
+
+</html>

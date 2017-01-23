@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Komentarze</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                Lista komentarzy
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Produkt</th>
+                            <th>Treść</th>
+                            <th>Kategoria</th>
+                            <th>Zarządzaj</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="feedback in feedbacks | orderBy:'-id'">
+                            <td>{{feedback.id}}</td>
+                            <td>{{feedback.product.name}}</td>
+                            <td>{{feedback.description}}</td>
+                            <td>{{feedback.product.category.name}}</td>
+                            <td>
+                                <span class="fa fa-remove" data-toggle="tooltip" data-placement="top"
+                                      title="Usuń" ng-click="delete(feedback.id)"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->

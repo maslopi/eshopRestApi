@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; CHARSET=iso-8859-2">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Multitenant Shop</title>
+  <link href="css/demo.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <link href="css/ngDialog.css" rel="stylesheet">
+  <link href="css/ngDialog-theme-plain.css" rel="stylesheet">
+  <link href="css/ngDialog-theme-default.css" rel="stylesheet">
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+  <link href="css/payment.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="img/profile.png" />
+</head>
+<body ng-controller="MainCtrl as main">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="brand" href="#/index">
+          <img class="img-responsive" src="img/profile2.png" alt="" height="50" width="50">
+        </a>
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="LoginController">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#/categories">Kategorie</a>
+          </li>
+          <li>
+            <a href="#/articles">Artykuly</a>
+          </li>
+          <li>
+            <a href="#/guestbook">Ksiega gosci</a>
+          </li>
+          <li>
+            <a href="#/regulations">Regulamin</a>
+          </li>
+          <li>
+            <a href="#/contact">Kontakt</a>
+          </li>
+          <li>
+            <a href="#/shoppingcart">Koszyk</a>
+          </li>
+          <li ng-show=isLogged()>
+            <a href="#/shoppingcarthistory" id="h">Historia</a>
+          </li>
+          <li ng-hide=isLogged()>
+            <a href="#/login">Logowanie</a>
+          </li>
+          <li ng-show=isLogged()>
+            <a href ng-click="logout()">Wyloguj</a>
+          </li>
+          <li ng-hide=isLogged()>
+            <a href="#/register">Rejestracja</a>
+          </li>
+          <li>
+            <a href="#/accountsettings">{{getLoggedUser()}}</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <div class="container" ng-view>
+  </div>
+  <div class="container">
+    <hr>
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>
+            <center>Copyright &copy; Tomasz Macełko</center>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-touch.js"></script>
+
+
+  <!-- <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.3.2/jquery.payment.min.js"></script> -->
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script> -->
+  <script src="js/jquery.js"></script>
+  <script src="js/ngDialog.js"></script>
+  <script src="js/payment.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="scripts/Shop.js"></script>
+
+  <script src="scripts/config.js"></script>
+  <script src="scripts/services/ProductsService.js"></script>
+  <script src="scripts/services/CategoriesService.js"></script>
+  <script src="scripts/services/UsersService.js"></script>
+  <script src="scripts/services/RolesService.js"></script>
+  <script src="scripts/services/GuestbookService.js"></script>
+  <script src="scripts/services/ArticlesService.js"></script>
+  <script src="scripts/services/LoginService.js"></script>
+  <script src="scripts/services/ProductsFeedbackService.js"></script>
+  <script src="scripts/services/OrdersService.js"></script>
+
+  <script src="scripts/controllers/ProductsController.js"></script>
+  <script src="scripts/controllers/UsersController.js"></script>
+  <script src="scripts/controllers/RolesController.js"></script>
+  <script src="scripts/controllers/CategoriesController.js"></script>
+  <script src="scripts/controllers/GuestbookController.js"></script>
+  <script src="scripts/controllers/ShoppingCartController.js"></script>
+  <script src="scripts/controllers/LoginController.js"></script>
+  <script src="scripts/controllers/DetailsController.js"></script>
+  <script src="scripts/controllers/ArticlesController.js"></script>
+  <script src="scripts/controllers/ProductsFeedbackController.js"></script>
+  <script src="scripts/controllers/OrdersController.js"></script>
+
+  <script src="js/angular-route-min.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script>
+    $('.carousel').carousel({
+      interval: 3000 //changes the speed
+    })
+  </script>
+</body>
+</html>

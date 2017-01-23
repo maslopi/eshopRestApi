@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dodawanie produktu</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12" ng-init="prepare()">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <form id="productEdit" method="post" ng-submit="create(product)">
+                    <div class="form-group">
+                        <label>Nazwa</label>
+                        <input class="form-control" type="text" ng-model="product.name" maxlength="120" autofocus="true" required
+                               placeholder="Podaj nazwę produktu"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategoria</label>
+                        <select class="form-control" ng-model="product.category.id" required>
+                            <option ng-repeat="category in categories | filter:notNullFilter" value="{{category.id}}">
+                                {{category.parent.name}} > {{category.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="product.enabled"> Aktywny
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Opis</label>
+                        <textarea class="form-control" ng-model="product.description" required
+                                  placeholder="Podaj opis">
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Cena</label>
+                        <input class="form-control" maxlength="10" type="text" ng-model="product.price" required
+                               placeholder="Podaj cenę"/>
+                    </div>
+                    <button class="btn btn-primary pull-right" ng-click="submit()">Dodaj produkt</i>
+                    </button>
+                    <!-- /.table-responsive -->
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
